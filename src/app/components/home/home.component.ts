@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  user: any;
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.getUserData()
+  }
+
+  getUserData() {
+    this.http.get("https://api.github.com/users/LeanCabeza").subscribe((data) => {
+      this.user = data;
+      console.log(this.user);
+    });
   }
 
 }
