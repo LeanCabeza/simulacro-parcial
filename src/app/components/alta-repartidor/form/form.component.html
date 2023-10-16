@@ -43,15 +43,8 @@
 
     <div class="col-sm-6">
       <label for="paisOrigen" class="form-label">Pais Origen</label>
-      <input type="text" 
-             class="form-control" 
-             id="paisOrigen" 
-             [value]="paisOrigen" 
-             disabled
-             >
-      <div *ngIf="repartidorForm.get('paisOrigen')?.hasError('required') && repartidorForm.get('paisOrigen')?.touched" class="text-danger">
-        Pais Origen es requerido.
-      </div>
+      <br>
+      <label> {{paisOrigen}} </label>
     </div>
 
     <div class="col-sm-6">
@@ -67,5 +60,5 @@
     </div>
   </div>
   <hr class="my-4">
-  <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="repartidorForm.invalid && this.paisOrigen == ''">Dar de Alta</button>
+  <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="repartidorForm.invalid">Dar de Alta</button>
 </form>

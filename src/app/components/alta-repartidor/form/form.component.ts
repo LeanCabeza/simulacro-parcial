@@ -22,8 +22,7 @@ export class FormComponent implements OnInit {
       nombre: ['', [Validators.required, Validators.minLength(3)]],
       edad: ['', [Validators.required, Validators.min(0)]],
       capacidadTransporte: ['', [Validators.required, Validators.min(0)]],
-      unidadPropia: ['', [Validators.required]],
-      paisOrigen: ['', [Validators.required]]
+      unidadPropia: ['', [Validators.required]]
     });
   }
 
@@ -33,16 +32,18 @@ export class FormComponent implements OnInit {
 
   submitForm() {
     console.log("Entro al submit form",this.repartidorForm.value);
-      let repartidor : Repartidor  = {
+
+    if(
+this.paisOrigen != "" ){
+        let repartidor : Repartidor  = {
           dni: this.repartidorForm.value.dni,
           nombre: this.repartidorForm.value.nombre,
           edad: this.repartidorForm.value.edad,
           capacidadTransporte: this.repartidorForm.value.capacidadTransporte,
           unidadPropia: this.repartidorForm.value.unidadPropia,
           paisOrigen: this.paisOrigen
-      }
-      this.userService.agregarRepartidor(repartidor).then(response => {
-          console.log("Entro al submit form, EXITO")
+        }
+        this.userService.agregarRepartidor(repartidor).then(response => {
           Swal.fire({
             icon: 'success',
             title: 'Dado de alta correctamente!',
@@ -52,7 +53,6 @@ export class FormComponent implements OnInit {
         })
         .catch(error => {
           console.error('Error al dar de alta los datos', error);
-          console.log("Entro al submit form,ERROR")
           Swal.fire({
             icon: 'error',
             title: 'Error al dar de alta',
@@ -60,6 +60,16 @@ export class FormComponent implements OnInit {
             timer: 1500
           })
         });
+    }else{
+      Swal.fire({
+        icon: 'error',
+        title: 'Te falto seleccionar un pais del listado de paises.',
+        showConfirmButton: false,
+        timer: 1500
+      })
+    }
+      
+      
   }
 
 
