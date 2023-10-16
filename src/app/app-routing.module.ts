@@ -14,7 +14,11 @@ const routes: Routes = [
     canActivate: [authGuard],
     loadChildren: () => import('./modules/alta-repartidor/alta-repartidor-routing.module').then((m) => m.AltaRepartidorRoutingModule)
   },
-  { path: 'repartidorDetalle', component: RepartidorDetalleComponent },
+  {
+    path: 'repartidorDetalle',
+    canActivate: [authGuard],
+    loadChildren: () => import('./modules/repartidor-detalle/repartidor-detalle-routing.module').then((m) => m.RepartidorDetalleRoutingModule)
+  }
 ];
 
 @NgModule({
