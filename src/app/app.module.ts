@@ -11,6 +11,9 @@ import { AngularFireAuthModule } from "@angular/fire/compat/auth";
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
+import { AltaRepartidorComponent } from './components/alta-repartidor/alta-repartidor.component';
+import { FlagsComponent } from './components/alta-repartidor/flags/flags.component';
+import { FormComponent } from './components/alta-repartidor/form/form.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAB9vc__WffuJUUZuIUrVGlACy42RvrLeU",
@@ -27,7 +30,10 @@ const firebaseConfig = {
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    AltaRepartidorComponent,
+    FlagsComponent,
+    FormComponent
    ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import Swal from 'sweetalert2';
 
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   email: string = '';
   password: string = '';
-  constructor(private firebaseService: FirebaseService) { }
+  constructor(private firebaseService: FirebaseService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
         showConfirmButton: false,
         timer: 1500
       })
+      this.router.navigate(['']);
     } catch (error) {
       Swal.fire({
         icon: 'error',
