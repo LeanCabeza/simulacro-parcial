@@ -1,0 +1,23 @@
+<div class="table-responsive">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead class="bg-primary text-white">
+        <tr>
+          <th>Nombre</th>
+          <th>Peso</th>
+          <th>Ingredientes</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pizza of pizzas">
+          <td>{{ pizza.nombre }}</td>
+          <td>{{ pizza.peso }}</td>
+          <td>{{ pizza.ingredientes }}</td>
+          <td>{{ pizza.precio }}</td>
+          <td><button class="btn btn-success" (click)="seleccionarPizza(pizza)">Seleccionar</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

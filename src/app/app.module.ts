@@ -18,6 +18,11 @@ import { DetallePaisComponent } from './components/repartidor-detalle/detalle-pa
 import { DetalleRepartidorComponent } from './components/repartidor-detalle/detalle-repartidor/detalle-repartidor.component';
 import { RepartidorDetalleComponent } from './components/repartidor-detalle/repartidor-detalle.component';
 import { ListaRepartidoresComponent } from './components/repartidor-detalle/lista-repartidores/lista-repartidores.component';
+import { ListaPizzasComponent } from './components/pizzas/lista-pizzas/lista-pizzas.component';
+import { BorrarPizzaComponent } from './components/pizzas/borrar-pizza/borrar-pizza.component';
+import { CrearPizzaComponent } from './components/pizzas/crear-pizza/crear-pizza.component';
+import { ModificarPizzaComponent } from './components/pizzas/modificar-pizza/modificar-pizza.component';
+import { PizzasComponent } from './components/pizzas/pizzas.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAB9vc__WffuJUUZuIUrVGlACy42RvrLeU",
@@ -41,7 +46,12 @@ const firebaseConfig = {
     DetallePaisComponent,
     DetalleRepartidorComponent,
     RepartidorDetalleComponent,
-    ListaRepartidoresComponent
+    ListaRepartidoresComponent,
+    ListaPizzasComponent,
+    BorrarPizzaComponent,
+    CrearPizzaComponent,
+    ModificarPizzaComponent,
+    PizzasComponent
    ],
   imports: [
     BrowserModule,

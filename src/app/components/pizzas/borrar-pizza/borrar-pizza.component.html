@@ -1,0 +1,14 @@
+<div class="card mb-4 rounded-3 shadow-sm border-danger">
+  <div class="card-header py-3 text-white bg-danger border-danger">
+    <h4 class="my-0 fw-normal">Borrar Pizza</h4>
+  </div>
+  <div class="card-body" *ngIf="this.pizza != null">
+    <h1 class="card-title pricing-card-title">{{this.pizza.nombre}}</h1>
+    <ul class="list-unstyled mt-3 mb-4">
+      <li>Ingredientes: {{this.pizza.ingredientes}}</li>
+      <li>Peso: {{this.pizza.peso}}</li>
+      <li>Precio: $ {{this.pizza.precio}}</li>
+    </ul>
+    <button type="button" class="w-100 btn btn-lg btn-danger" (click)="borrarPizza()">Borrar</button>
+  </div>
+</div>
