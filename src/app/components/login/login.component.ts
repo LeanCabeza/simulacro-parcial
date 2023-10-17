@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
 
   selectUser(userId: number) {
     if (userId === 1) {
-      this.email = 'usuario1@example.com';
+      this.email = 'admin@admin.com';
       this.password = 'password1';
     } else if (userId === 2) {
       this.email = 'usuario2@example.com';

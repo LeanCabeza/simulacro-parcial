@@ -21,7 +21,7 @@ export class CrearPizzaComponent implements OnInit {
       nombre: ['', Validators.required],
       ingredientes: ['', Validators.required],
       precio: ['', [Validators.required, Validators.min(0.01)]],
-      peso: ['', [Validators.required, Validators.min(1)]]
+      peso: ['', [Validators.required, Validators.min(500), Validators.max(1000)]]
     });
   }
 

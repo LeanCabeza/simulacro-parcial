@@ -18,7 +18,10 @@
       </div>
       <div class="form-group">
         <label for="peso">Peso</label>
-        <input type="number" class="form-control" id="peso" name="peso" [(ngModel)]="pizza.peso" required>
+        <input type="number" class="form-control" id="peso" name="peso" [(ngModel)]="pizza.peso" required min="500" max="1000"> 
+        <div class="text-warning">
+          El peso debe ser entre 500 y 1000 gramos.
+        </div>
       </div>
       <hr>
       <button type="submit" class="w-100 btn btn-lg btn-primary" [disabled]="!pizzaForm.form.valid">Agregar Pizza</button>
